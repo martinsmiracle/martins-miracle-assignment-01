@@ -14,13 +14,17 @@ const assignment = {};
  * @param {Number} destination is the stopping number
  * @returns number the sum of the numbers from 1 to destination
  */
-function sumOfNumbersTo(destination) {
+function sumOfNumbersTo(n) {
     let sum = 0;
-    return sum
-}
+    
+    for (let i = 1; i <= n; i++) {
+        sum += i;
+    }
+    return sum;
+    }
 
+assignment.sumOfNumbersTo = sumOfNumbersTo;
 
-// assignment.sumOfNumbersTo = sumOfNumbersTo;
 
 /**
  * Challenge - 2
@@ -32,12 +36,31 @@ function sumOfNumbersTo(destination) {
  * @param {Number} destination the stopping number
  * @returns the object containing count, sum, arrayOfEvenNumbers from 1 to destination
  */
-function countEvenNumbersWithin(destination) {
+function countEvenNumbersWithin(n) {
     // Write your code here
     // get the number from 1 to destination
     let sum = 0;
-    let count = 0;
-    let arrayOfEvenNumbers = [];
+    for(i=1;i<=n;i++)
+    if(i%2==0)
+    sum += i;
+
+    
+    var count = 0;
+    for(let i = 1 ; i <= n; i++) {
+        if (i % 2 == 0){
+            count++;}
+        }
+        
+    let arrayOfEvenNumbers = []
+    var my_array = [];
+    for (var i = 1; i <= n; i++) {
+       my_array.push(i);
+    };
+
+    for(let i = 1; i < my_array.length; i++) {
+	    if(my_array[i] % 2 == 0)
+	        arrayOfEvenNumbers.push(my_array[i]);
+}
 
     return {
         // property value shorthand
@@ -49,7 +72,8 @@ function countEvenNumbersWithin(destination) {
     };
 }
 
-// assignment.countEvenNumbersWithin = countEvenNumbersWithin;
+assignment.countEvenNumbersWithin = countEvenNumbersWithin;
+
 
 /**
  * Challenge - 3
@@ -63,9 +87,9 @@ function countEvenNumbersWithin(destination) {
  *
  * See https://www.thoughtco.com/celcius-to-farenheit-formula-609227 for the conversion formula
  *
- * @param {Array} arrayOfNumbers the array containing temperatures in Celsius to be converted
- * @returns Array the converted temperatures in Fahrenheit
- */
+//  * @param {Array} arrayOfNumbers the array containing temperatures in Celsius to be converted
+//  * @returns Array the converted temperatures in Fahrenheit
+//  */
 function celsiusToFahrenheit(arrayOfNumbers) {
     let result = [];
 
